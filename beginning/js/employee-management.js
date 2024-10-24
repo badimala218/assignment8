@@ -20,6 +20,7 @@ function add(evt) {
     $("errorName").innerHTML = "";
     $("errorTitle").innerHTML = "";
     $("errorExt").innerHTML = "";
+
     // Validate
     let valid = true;
     if (name.value === "")
@@ -40,7 +41,7 @@ function add(evt) {
         const extError = $("errorExt");
         extError.appendChild(document.createTextNode("Invalid entry"));
     }
-    // if valid, update list and heading, 
+    // if valid, update list and heading
     if (valid)
     {    
         employee_list.push([name.value, title.value, extension.value]);
@@ -55,13 +56,9 @@ function del(evt) {
     let index = parseInt(target.id.replace(/^[^\d]+/, ""));
     if (Number.isNaN(index) || index < 0 || index > employee_list.length) {
         window.console.log("Invalid employee number. " + index);
-        // TODO remove log
     } else {
-        window.console.log(employee_list);
         let employee = employee_list.splice(index, 1);
         window.console.log(employee + ' was deleted.');
-        addDeleteEventListeners();
-        // TODO remove log
         // Update employee display
         updateEmployeeDisplay();
     }
@@ -72,7 +69,6 @@ const tableHeader = "<tr id='tableHeader'><th>Name</th><th>Title</th><th>Extensi
 function updateEmployeeDisplay()
 {
     "use strict";
-    window.console.log(employee_list);
     $("employeeTable").innerHTML = tableHeader;
     $("employeeCount").innerHTML = "Showing " + employee_list.length + " Employees";
     for (const index in employee_list)
@@ -109,10 +105,8 @@ function updateEmployeeDisplay()
 function addDeleteEventListeners()
 {
     const elements = window.document.getElementsByClassName("delete");
-    window.console.log(elements);
     for (const element of elements) 
     {
-        window.console.log(element);
         element.addEventListener("click", del);
     }
 }
