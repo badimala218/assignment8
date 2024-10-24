@@ -1,0 +1,87 @@
+body 
+{
+    font-family: sans-serif;
+    font-size: large;
+}
+
+form
+{
+    display: grid;
+    grid-template: repeat(4, auto) / 0.5fr 1fr 50px 1fr;
+    width: 500px;
+}
+
+form span
+{
+    grid-column: 1 / 2;
+}
+
+input[type="text"]
+{
+    padding: 5px 0;
+    margin-bottom: 5px;
+    grid-column: 2 / 4;
+    box-shadow: 0px 0px 1px 1px cornflowerblue;
+}
+
+input[type="button"], #tableHeader
+{
+    background-color: cornflowerblue;
+    color: white;
+    border-width: 0;
+}
+
+input[type="button"]:hover
+{
+    background-color: rgba(100, 149, 237, 0.7);
+}
+
+form input[type="button"]
+{
+    padding: 5px 0;
+    margin-top: 10px;
+    grid-column: 3 / 4;
+}
+
+table
+{
+    width: 800px;
+}
+
+#tableHeader
+{
+    text-align: left;
+}
+
+td
+{
+    width: 80px;
+}
+
+td:last-child
+{
+    text-align: center;
+    min-width: 30px;
+}
+
+td:last-child, th:last-child
+{
+    min-width: 80px;
+}
+
+.error 
+{
+    grid-column: 4 / 5;
+    color: red;
+    margin-left: 10px;
+}
+
+tr:nth-child(odd)
+{
+    background-color: rgba(100, 149, 237, 0.1) ;
+}
+
+tr:nth-child(even)
+{
+    background-color: rgba(100, 149, 237, 0.3);
+}
